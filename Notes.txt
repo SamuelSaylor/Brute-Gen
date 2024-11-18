@@ -1,0 +1,24 @@
+Transformer:
+Neutral network architecture that uses attention mechanisms.
+
+Attention mechanism - Learns dependencies between different elements of a sequence based on position and content.
+
+Idea:
+# Differentiate conjunctions (and, if, or etc) and other stuff (nouns/verbs) from each other from any .txt.
+
+Possibly use it as my own micro-LLM
+
+example:
+
+I am a baseball player, and part of the sport is throwing the baseball.
+I like apples and oranges, but I dislike bananas.
+I am so awesome
+
+conjunctions: I, am, a, and, of, the, so
+
+# hence "training" the ai
+
+plans:
+# -manual training (be given questions like "Do you throw a football?" or "Is pizza a noun?" etc)
+# -match nouns to verbs that can be applied to them (Throw, football; Shoot, basketball; Shoot, gun)
+
