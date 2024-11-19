@@ -89,7 +89,6 @@ for i in analyze: #Sorting data
     
     if ans == "c":
         conjunctions.append(i)
-        print(conjunctions)
     elif ans == "n":
         nouns.append(i)
     elif ans == "v":
@@ -103,3 +102,7 @@ print("All data succesfully saved.")
 
 print("Storing changes")
 merge(r'WordStorage\conjunctions.txt',conjunctions)
+merge(r'WordStorage\nouns.txt',nouns)
+merge(r'WordStorage\verbs.txt',verbs)
+merge(r'WordStorage\adjectives.txt',adjectives)
+merge(r'WordStorage\adverbs.txt',adverbs)
