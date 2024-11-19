@@ -1,12 +1,14 @@
-txt = ""
+sample = [] #All words being used (could be supe duper massive)
+analyze = [] #Insertion.txt words to be analyzed
 
+#Word stuff --------
 conjunctions = []
 nouns = []
 verbs = []
 adjectives = []
 adverbs = []
 
-def loadText(ty):
+def loadText(ty): #reads files and converts to lists
     x = []
     with open(ty,"r") as file:
         content = file.read()
@@ -14,8 +16,18 @@ def loadText(ty):
         
         for i in words:
             x.append(i)
+            sample.append(i)
+            print(i)
 
     return x
+
+def merge(txt, arr): #updates files in WordStorage
+    msg = ""
+    for i in arr:
+        msg = msg+i+"," #data is stored like this in WordStorage
+    
+    with open(txt,"w") as file:
+        file.write(msg)
 
 print("Loading conjunctions")
 conjunctions = loadText(r'WordStorage\conjunctions.txt')
@@ -28,14 +40,66 @@ adjectives = loadText(r'WordStorage\adjectives.txt')
 print("Loading adverbs")
 adverbs = loadText(r'WordStorage\adverbs.txt')
 
-print("Reading insertion")
-#Reading new File
+print("Loading insertion")
+#Gathers all the data from Insertion.txt and puts it all into one list.
 try:
     with open('Insertion.txt','r') as file:
         content = file.read()
-        lines = content.split("\n")
         
-    for line in lines:
-        txt = txt+" "+line
+        content = content.replace("\n"," ")
+        content = content.replace(".","")
+        content = content.replace(",","")
+        content = content.replace(":","")
+        content = content.replace(";","")
+        
+        words = content.split(" ")
+        
+    for i in words:
+        chk = False
+        for x in analyze:
+            if x == i:
+                chk = True
+        
+        if chk == False:
+            analyze.append(i)
 except:
     print("Issue with reading insertion.txt")
+
+print("Putting it all together")
+trash = []
+for i in analyze: #gets rid of words that are already stored
+    chk = False
+    for x in sample:
+        if i == x:
+            chk = True
+    if chk == True:
+        trash.append(i)
+        
+for i in trash:
+    for x in analyze:
+        if i == x:
+            analyze.remove(x)
+
+print("-----------------------")
+
+for i in analyze: #Sorting data
+    print("Is \""+ i+"\" a conjucate, noun, verb, adjective, or adverb?")
+    print("c/n/v/ad/av")
+    ans = input()
+    
+    if ans == "c":
+        conjunctions.append(i)
+        print(conjunctions)
+    elif ans == "n":
+        nouns.append(i)
+    elif ans == "v":
+        verbs.append(i)
+    elif ans == "ad":
+        adjectives.append(i)
+    elif ans == "av":
+        adverbs.append(i)
+
+print("All data succesfully saved.")
+
+print("Storing changes")
+merge(r'WordStorage\conjunctions.txt',conjunctions)
