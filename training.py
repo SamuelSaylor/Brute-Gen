@@ -30,20 +30,20 @@ def merge(txt, arr): #updates files in WordStorage
         file.write(msg)
 
 print("Loading conjunctions")
-conjunctions = loadText(r'WordStorage\conjunctions.txt')
+conjunctions = loadText(r'Brute-Gen-main\WordStorage\conjunctions.txt')
 print("Loading nouns")
-nouns = loadText(r'WordStorage\nouns.txt')
+nouns = loadText(r'Brute-Gen-main\WordStorage\nouns.txt')
 print("Loading verbs")
-verbs = loadText(r'WordStorage\verbs.txt')
+verbs = loadText(r'Brute-Gen-main\WordStorage\verbs.txt')
 print("Loading adjectives")
-adjectives = loadText(r'WordStorage\adjectives.txt')
+adjectives = loadText(r'Brute-Gen-main\WordStorage\adjectives.txt')
 print("Loading adverbs")
-adverbs = loadText(r'WordStorage\adverbs.txt')
+adverbs = loadText(r'Brute-Gen-main\WordStorage\adverbs.txt')
 
 print("Loading insertion")
 #Gathers all the data from Insertion.txt and puts it all into one list.
 try:
-    with open('Insertion.txt','r') as file:
+    with open('Brute-Gen-main\Insertion.txt','r') as file:
         content = file.read()
         
         content = content.replace("\n"," ")
@@ -51,6 +51,8 @@ try:
         content = content.replace(",","")
         content = content.replace(":","")
         content = content.replace(";","")
+        content = content.replace("#","")
+        content = content.replace("$","")
         
         words = content.split(" ")
         
@@ -101,8 +103,8 @@ for i in analyze: #Sorting data
 print("All data succesfully saved.")
 
 print("Storing changes")
-merge(r'WordStorage\conjunctions.txt',conjunctions)
-merge(r'WordStorage\nouns.txt',nouns)
-merge(r'WordStorage\verbs.txt',verbs)
-merge(r'WordStorage\adjectives.txt',adjectives)
-merge(r'WordStorage\adverbs.txt',adverbs)
+merge(r'Brute-Gen-main\WordStorage\conjunctions.txt',conjunctions)
+merge(r'Brute-Gen-main\WordStorage\nouns.txt',nouns)
+merge(r'Brute-Gen-main\WordStorage\verbs.txt',verbs)
+merge(r'Brute-Gen-main\WordStorage\adjectives.txt',adjectives)
+merge(r'Brute-Gen-main\WordStorage\adverbs.txt',adverbs)
