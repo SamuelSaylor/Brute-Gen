@@ -10,5 +10,10 @@ def loadText(ty): #reads files and converts to lists
 
     return x
 
-def preciseWords(word,precise,txt): # For sorting words to be more precise, IE: football$activity, pizza$food
-    pass
+def write(txt,arr): #updates savefiles
+    msg = ""
+    for i in arr:
+        msg = msg+i+"," #data is stored like this in WordStorage
+    
+    with open(txt,"w") as file:
+        file.write(msg)
