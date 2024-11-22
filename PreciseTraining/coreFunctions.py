@@ -17,3 +17,25 @@ def write(txt,arr): #updates savefiles
     
     with open(txt,"w") as file:
         file.write(msg)
+        
+def preciseClearing(txt,arr,precisePhrases): # get precise data set up Nandiaondiownadioawndw
+    precThrowaway = []
+    x = []
+    
+    with open(txt,"r") as file:
+        fart = file.read()
+
+        for i in precisePhrases:
+            fart = fart.replace(i,"")
+        
+        fart = fart.split(",")
+
+        for i in fart:
+            for x in arr:
+                if x == i:
+                    precThrowaway.append(i)
+        
+        for i in precThrowaway:
+            for x in arr:
+                if x == i:
+                    arr.remove(x)
