@@ -17,7 +17,15 @@ def write(txt,arr): #updates savefiles
     
     with open(txt,"w") as file:
         file.write(msg)
+      
+def updateTxt(txt,arr): # Write but different
+    msg = ""
+    for i in arr:
+        msg = msg+i+","
         
+    with open(txt,"a") as file:
+        file.write(","+msg)
+    
 def preciseClearing(txt,arr,precisePhrases): # get precise data set up Nandiaondiownadioawndw
     precThrowaway = []
     x = []
@@ -34,8 +42,23 @@ def preciseClearing(txt,arr,precisePhrases): # get precise data set up Nandiaond
             for x in arr:
                 if x == i:
                     precThrowaway.append(i)
-        
-        for i in precThrowaway:
-            for x in arr:
-                if x == i:
-                    arr.remove(x)
+        return fart
+                    
+def antiduplicates(oldArr,upd):
+    trash = []
+    updArr = upd
+    
+    for i in updArr: #gets rid of words that are already stored
+        chk = False
+        for x in oldArr:
+            if i == x:
+                chk = True
+        if chk == True:
+            trash.append(i)
+  
+    for i in trash:
+        for x in updArr:
+            if i == x:
+                updArr.remove(x)
+    
+    return updArr
