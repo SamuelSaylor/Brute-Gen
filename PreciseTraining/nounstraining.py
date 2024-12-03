@@ -8,7 +8,7 @@ precThrowaway = []
 with open(txt,"r") as file: #Removes the $ designations
     fart = file.read()
     
-    fart = fart.replace("$proper","")
+    fart = fart.replace("$person","")
     fart = fart.replace("$job","")
     fart = fart.replace("$place","")
     fart = fart.replace("$obj","")
@@ -43,5 +43,5 @@ for i in nouns: # Questionaire
         elif ans == "a":
             preciseNouns.append(i+"$activity")
 
-coreFunctions.write(txt, preciseNouns)
+coreFunctions.updateTxt(txt, preciseNouns)
 print("Save complete")
