@@ -1,7 +1,7 @@
 # Brute-Gen
 Started work 11/28/2024
 
-Brute Gen is a small project of mine designed to mimick how AI machine learning functions. I wouldn't dare call it an artifical intelligence whatsoever, as this has all been made from the ground up without any prior experience with LLMs.
+Brute Gen is a small project of mine designed to generate simple sentences from words fed to it by users. As the title suggests, everything is bruteforced in.
 
 Keep in mind this was made by a high schooler, bugs and errors might be prevalent.
 
