@@ -1,5 +1,5 @@
 # Brute-Gen
-Started work 11/28/2024
+Started work 11/18/2024
 
 Brute Gen is a small project of mine designed to generate simple sentences from words fed to it by users. As the title suggests, everything is bruteforced in.
 
