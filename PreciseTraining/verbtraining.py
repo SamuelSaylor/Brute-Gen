@@ -37,5 +37,5 @@ for i in verbs: # Questionaire
         elif ans == "f":
             preciseVerbs.append(i+"$future")
 
-coreFunctions.write(txt, preciseVerbs)
+coreFunctions.updateTxt(txt, preciseVerbs)
 print("Save complete")
