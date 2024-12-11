@@ -16,3 +16,8 @@ Keep in mind that unanswered questions will just be ignored.
 
 # # Additional training
 Inside of the PreciseTraining folder, a couple programs can be used to do some more precise tasks. (Such as determining if a noun is a person, place, or a thing.)
+
+Begin by filling in more information in **/PreciseTraining/nounstraining.py** and **/PreciseTraining/verbtraining.py** to be more precise on the functions of words. For example, in nounstraining.py you can choose if a noun is a person, place, activty, etc.
+
+Head on over to **/PreciseTraining/nounVerbPairing.py** and choose which nouns would logically make sense in a sentence with verbs.
+For example, you would _shoot_ a basketball, as that makes sense, but it's illogical to say you'd _kill_ a basketball. (Unless, of course, your basketball for some reason has life and is personified through your work.)
